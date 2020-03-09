@@ -9,6 +9,9 @@ class Tictactoe
     {
         this.players[0] = new Playerclass('x');
         this.players[1] = new Playerclass('o');
+        this.winningpositions = [[0,1,2],[3,4,5],[6,7,8],
+            [0,3,6],[1,4,7],[2,5,8],
+            [0,4,8],[2,4,6]];
         this.board = new Boardclass();
     }
 
@@ -30,7 +33,7 @@ class Tictactoe
     }
 
     gameend() {
-        if(this.board.checkwinner()) {
+        if(this.board.checkwinner(this.winningpositions)) {
             console.log(this.players[this.chance % 2].getSymbol()+ "is winner");
             return true;
         }

@@ -1,19 +1,21 @@
-const Playerclass = require('./Player');
-const Boardclass = require('./Board');
+const Player = require('./Player');
+const Board = require('./Board');
+const prompt = require('prompt-sync')()
+
 
 class Tictactoe
 {
-    players = new Array(2);
-    chance = 0;
-    constructor()
-    {
-        this.players[0] = new Playerclass('x');
-        this.players[1] = new Playerclass('o');
+   players = new Array(2);
+   constructor()
+   {
+        this.players[0] = new Player('x');
+        this.players[1] = new Player('o');
         this.winningpositions = [[0,1,2],[3,4,5],[6,7,8],
             [0,3,6],[1,4,7],[2,5,8],
             [0,4,8],[2,4,6]];
-        this.board = new Boardclass();
-    }
+        this.board = new Board();
+        this.chance = 0;
+   }
 
     startgame() {
         while(!this.board.isBoardFilled()) {
@@ -26,7 +28,7 @@ class Tictactoe
 
     play(currentTurn)
     {
-        let position = this.players[currentTurn].getPosition();
+        let position = prompt(this.players[currentTurn].getSymbol() + " enter your position");
         while(!this.board.validatePosition(position))
             position = this.players[currentTurn].getPosition();
         return position;
@@ -47,6 +49,7 @@ class Tictactoe
 
 }
 
-var tictactoe = new Tictactoe();
+let tictactoe = new Tictactoe();
 tictactoe.startgame();
+
 

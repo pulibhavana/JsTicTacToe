@@ -12,15 +12,7 @@ class Player {
         return this.symbol;
     }
 
-    getPosition()
-    {
-        let position = prompt(this.symbol + " enter your position");
-        return position;
-    }
 }
-
-
-
 
 module.exports = Player;
 

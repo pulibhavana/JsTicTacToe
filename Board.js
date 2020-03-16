@@ -1,8 +1,9 @@
 
 class Board
 {
-
-    grid = new Array(9);
+    constructor() {
+        this.grid = new Array(9);
+    }
 
    validatePosition(position)
    {

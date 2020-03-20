@@ -1,32 +1,27 @@
 
-class Board
-{
-    constructor() {
-        this.grid = new Array(9);
+class Board {
+
+    placeTheSymbol(clicked_id,chance)
+    {
+        let isSymbolPresent = document.getElementById(clicked_id).textContent == "";
+
+        if (chance % 2 == 0 && isSymbolPresent)
+            document.getElementById(clicked_id).textContent = "X";
+
+        else if (isSymbolPresent)
+            document.getElementById(clicked_id).textContent = "O";
+
+
     }
 
-   validatePosition(position)
-   {
-       return this.grid[position] == null;
-   }
-
-   placethesymbol(position,symbol)
-   {
-       this.grid[position] = symbol;
-   }
-
-   checkwinner(winningpositions)
-   {
-
-       return (winningpositions.some(element => this.grid[element[0]] == this.grid[element[1]]
-       && this.grid[element[1]]== this.grid[element[2]] && this.grid[element[0]]!= undefined));
-   }
-
-   isBoardFilled()
-   {
-       return !this.grid.includes(undefined);
-   }
-
+    isSameSymbol(element)
+    {
+        let div1 = document.getElementById(element[0]).textContent;
+        let div2 = document.getElementById(element[1]).textContent;
+        let div3 = document.getElementById(element[2]).textContent;
+        if (div1 == div2 && div2 == div3 && div1 != "")
+            return true;
+        return false;
+    }
 }
 
-module.exports = Board;

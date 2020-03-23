@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About</title>
+    <link rel="stylesheet" type = "text/css" href="../Stylesheets/style.css">
+</head>
+<body style="background-color:black" >
+<div class = "rules-container">
+    <center><h1> Rules for playing TicTacToe</h1></center>
+    <hr>
+    <p>1. The game is played on a grid that's 3 squares by 3 squares.</p>
+    <p>2. You are X, your friend is O. Players take turns putting their marks
+        in empty squares.</p>
+    <p>3. The first player to get 3 of her marks in a row
+        (up, down, across, or diagonally) is the winner as shown below.</p>
+    <div class = "image-container">
+        <img src = "../Images/row.png">
+        <img src = "../Images/column.jpg">
+        <img src = "../Images/leftDiagonal.jpg">
+        <img src = "../Images/rightDiagonal.jpg">
+    </div>
+    <p>4. When all 9 squares are full, the game is over.
+        If no player has 3 marks in a row, the game ends in a tie.</p>
+
+</div>
+<center><button onclick = "openGame()">StartGame</button></center>
+<script>
+    function openGame()
+    {
+       window.location.replace("board.html");
+    }
+</script>
+</body>
+</html>

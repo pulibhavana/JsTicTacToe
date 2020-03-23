@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../Stylesheets/style.css">
+    <title>TicTacToe</title>
+</head>
+<body style="background-color: black">
+<center>
+    <div class = "tic-tac-toe-div">
+        <center><h1 style="color:black; font-size: 50px">TIC TAC TOE</h1></center>
+    </div>
+</center>
+
+<div class = "grid-container">
+    <div class = "user-container">
+        <h1 style="color:green;padding-left:20px">SCOREBOARD</h1>
+        <div class="score">
+            <div style="color:lightgoldenrodyellow">X</div>
+            <div id = "scoreX">0</div>
+            <div>:</div>
+            <div style="color:lightseagreen">O</div>
+            <div id = "scoreY">0</div>
+
+        </div>
+
+    </div>
+
+    <div class = player-board-container>
+        <div class = player-container>
+            <div id = "playerX" class="player-symbol " style="color: lightgoldenrodyellow;background-color: teal">
+                X
+            </div>
+            <div id = "playerO" class="player-symbol " style="color: lightseagreen;background-color:black">
+                O
+            </div>
+        </div>
+        <div id = "board" class = board-container>
+            <div class = "glow" id = 0 ></div>
+            <div class = "glow" id = 1 ></div>
+            <div class = "glow" id = 2 ></div>
+            <div class = "glow" id = 3 ></div>
+            <div class = "glow" id = 4 ></div>
+            <div class = "glow" id = 5 ></div>
+            <div class = "glow" id = 6 ></div>
+            <div class = "glow" id = 7 ></div>
+            <div class = "glow" id = 8 ></div>
+        </div>
+    </div>
+
+    <div id ="gameWinner" class = "game-result">
+        <center><h1>GAME WINNER</h1></center>
+        <center><div id="symbol" class = "symbol-appearance"></div></center>
+        <hr>
+        <center><button onclick = "window.close()" style="float: right">Exit</button></center>
+    </div>
+
+
+    <div class = "result-container">
+        <div class = "winner-container" id="winner">
+            <center>
+                <h1 >ROUND WINNER</h1>
+                <div id="winnerSymbol"  class = "symbol-appearance" >hello</div>
+            </center>
+            <hr>
+            <button onclick = "resetGame()">continue</button>
+            <button onclick = "finalResult()">Endgame</button>
+        </div>
+        <div class = "draw-container" id="draw">
+            <center><h1>DRAW</h1></center>
+            <hr>
+            <button onclick = "resetGame()">continue</button>
+            <button onclick = "finalResult()">Endgame</button>
+        </div>
+    </div>
+
+
+</div>
+
+
+<script src = "../Javascript/TicTacToe.js"></script>
+<script src = "../Javascript/Board.js"></script>
+<script src = "../Javascript/View.js"></script>
+<script src = "../Javascript/Player.js"></script>
+<script src = "../Javascript/Main.js"></script>
+
+
+</body>
+</html>
